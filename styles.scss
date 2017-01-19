@@ -1,7 +1,7 @@
 $main: #34314c;
 $secondary: #9592ad;
 $border: #d9dee9;
-$white: ffffff;
+$white: #ffffff;
 
 $highlight_1: #fd7473;
 $highlight_2: #fec951;
@@ -14,6 +14,7 @@ $highlight_4: #9f68d0;
 
 body{
   font-family: "Helvetica";
+  padding-bottom: 5em;
 }
 
 .border{
@@ -93,6 +94,16 @@ body{
   position: relative;
   list-style: none;
   padding: 0;
+  &:after{
+    content: " ";
+    width: 1px;
+    background: 1px $border;
+    height: 80%;
+    position: absolute;
+    top: 3em;
+    left: 3em;
+    z-index: 0;
+  }
   a{
     text-decoration: none;
   }
@@ -103,9 +114,9 @@ body{
     padding: 1em;
     margin-bottom: 1em;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     display: table;
-    width: 100%;
+    width: 96%;
     img, .info, .job_type{
       display: table-cell;
       vertical-align: middle;
@@ -200,8 +211,77 @@ body{
     font-weight: 700;
     font-size: .75em;
     text-align: center;
-    z-index: 2;
     position: relative;
+    z-index: 3;
     margin: 1em 0 2em 0;
+  }
+}
+
+.load_more{
+  text-align: center;
+  .button{
+    border: 2px solid $highlight_4;
+    outline: none;
+    padding: 1em 3.5em;
+    text-align: center;
+    background: transparent;
+    border-radius: 3em;
+    color: $highlight_4;
+    transition: all .3s ease-in-out;
+    &:hover{
+      border: 2px solid $main;
+      color: $main;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .main_header{
+    margin: 3em 0;
+  }
+  .logo{
+    display: block;
+    margin: auto;
+    text-align: center;
+    img{
+      float: none;
+    }
+    h1{
+      float: none;
+      margin: 0;
+      font-size: 1.1em;
+    }
+  }
+
+  .navi{
+    float: none;
+    text-align: center;
+    a{
+      margin-left: 0 .5em;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px){
+  #timeline{
+    .listing{
+      .image_wrapper{
+        margin-right: 1em;
+        img{
+          width: 50px;
+        }
+      }
+      .info{
+        width: 100%;
+        padding: .4em 0 0 0;
+        .job_title{
+          font-size: 1.25em;
+        }
+      }
+
+      .job_type{
+        display: none;
+      }
+    }
   }
 }

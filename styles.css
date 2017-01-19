@@ -2,7 +2,8 @@
   box-sizing: border-box; }
 
 body {
-  font-family: "Helvetica"; }
+  font-family: "Helvetica";
+  padding-bottom: 5em; }
 
 .border {
   height: 6px;
@@ -58,18 +59,27 @@ body {
   position: relative;
   list-style: none;
   padding: 0; }
+  #timeline:after {
+    content: " ";
+    width: 1px;
+    background: 1px #d9dee9;
+    height: 80%;
+    position: absolute;
+    top: 3em;
+    left: 3em;
+    z-index: 0; }
   #timeline a {
     text-decoration: none; }
   #timeline .listing {
-    background: ffffff;
+    background: #ffffff;
     border: 1px solid #d9dee9;
     border-radius: .3em;
     padding: 1em;
     margin-bottom: 1em;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     display: table;
-    width: 100%;
+    width: 96%;
     transition: all .3s ease-in-out; }
     #timeline .listing img, #timeline .listing .info, #timeline .listing .job_type {
       display: table-cell;
@@ -136,12 +146,59 @@ body {
     display: inline-block;
     padding: 1em 0;
     width: 100px;
-    background: ffffff;
+    background: #ffffff;
     border: 1px solid #d9dee9;
     border-radius: 3em;
     font-weight: 700;
     font-size: .75em;
     text-align: center;
-    z-index: 2;
     position: relative;
+    z-index: 3;
     margin: 1em 0 2em 0; }
+
+.load_more {
+  text-align: center; }
+  .load_more .button {
+    border: 2px solid #9f68d0;
+    outline: none;
+    padding: 1em 3.5em;
+    text-align: center;
+    background: transparent;
+    border-radius: 3em;
+    color: #9f68d0;
+    transition: all .3s ease-in-out; }
+    .load_more .button:hover {
+      border: 2px solid #34314c;
+      color: #34314c; }
+
+@media only screen and (max-width: 768px) {
+  .main_header {
+    margin: 3em 0; }
+  .logo {
+    display: block;
+    margin: auto;
+    text-align: center; }
+    .logo img {
+      float: none; }
+    .logo h1 {
+      float: none;
+      margin: 0;
+      font-size: 1.1em; }
+  .navi {
+    float: none;
+    text-align: center; }
+    .navi a {
+      margin-left: 0 .5em; } }
+
+@media only screen and (max-width: 600px) {
+  #timeline .listing .image_wrapper {
+    margin-right: 1em; }
+    #timeline .listing .image_wrapper img {
+      width: 50px; }
+  #timeline .listing .info {
+    width: 100%;
+    padding: .4em 0 0 0; }
+    #timeline .listing .info .job_title {
+      font-size: 1.25em; }
+  #timeline .listing .job_type {
+    display: none; } }
